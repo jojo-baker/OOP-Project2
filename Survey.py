@@ -22,20 +22,32 @@ qualifying_questions = [
 ]
 
 
-# section1_question_prompts = [
-#    '\n----------SQ1----------\nFirst section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
-#    '\n----------SQ1----------\nFirst section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
-#    '\n----------SQ1----------\nFirst section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
-# ]
-# section1_questions = [
-#     Question(section1_question_prompts[0], ' '),
-#     Question(section1_question_prompts[2], ' '),
-#     Question(section1_question_prompts[3], ' '),
-# ]
+section1_question_prompts = [
+   '\n----------SQ1----------\nFirst section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
+   '\n----------SQ2----------\nFirst section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
+   '\n----------SQ3----------\nFirst section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
+]
+section1_questions = [
+    Question(section1_question_prompts[0], ' '),
+    Question(section1_question_prompts[1], ' '),
+    Question(section1_question_prompts[2], ' '),
+]
 
 
 print('Welcome to my survey!\nPlease answer honestly.')
 
+section1 = Section('\n\n*****************************\n    Section 1 Title\n*****************************', '\n\nSection 1 Description\n\n')
+def run_section1():
+    print(section1.section_title)
+    print(section1.description)
+    def run_section1_questions(section1_questions):
+        for question in section1_questions:
+            answer = input(question.prompt)
+            if answer.lower() in ['a', 'b', 'c']:
+                print('Great, you answered ' + answer)
+            else:
+                print('Nope, not valid')
+    run_section1_questions(section1_questions)
 
 def run_survey(qualifying_questions):
     """ process the survey """
@@ -55,7 +67,7 @@ def run_survey(qualifying_questions):
             else:
                 print('===========================================================\nHmmmmmmm, that\'s not quite right...Please try again\n===========================================================')
     if sections_to_show[0] == 'a':
-        print('this is the first section')
+        run_section1()
 
     if sections_to_show[1] == 'a':
         print('this is the second section')
