@@ -1,6 +1,5 @@
 from Section import Section
 from Question import Question
-from Answer import Answer
 
 class Survey:
 
@@ -11,13 +10,13 @@ class Survey:
         pass
 
 # Welcome message
-print('\nWelcome to my survey!\nPlease answer honestly.')
+print('\nWelcome to the SheCodes survey!\nPlease answer honestly.')
 
 # Here are the first three qualifying questions
 question_prompts = [
-    '\n----------Q1----------\nSomething about Wednesday\'s class\n(a) Yes\n(b) No\n\n',
-    '\n----------Q2----------\nSomething about Saturday\'s class\n(a) Yes\n(b) No\n\n',
-    '\n----------Q3----------\nSomething about the mentors \n(a) Yes\n(b) No\n\n',
+    '\n---------- Question 1 ----------\nDid you attend Wednesday\'s class?\n(a) I wouldn\'t miss it!\n(b) Unfortunately I couldn\'t make it.\n\n',
+    '\n---------- Question 2 ----------\nDid you attend Saturday\'s class?\n(a) Absolutely!\n(b) Not this time.\n\n',
+    '\n---------- Question 3 ----------\nDo you feel you\'re learning a lot from the mentors?\n(a) A thousand times YES!\n(b) Not really, no.\n\n',
 ]
 qualifying_questions = [
     Question(question_prompts[0], ' '),
@@ -27,12 +26,12 @@ qualifying_questions = [
 
 # Here is the first section - title, description and questions
 # Section 1 title and descripion
-section1 = Section('\n\n*****************************\n       Section 1 Title\n*****************************', '\nSection 1 Description')
+section1 = Section('\n\n*****************************\n     About Wednesday...\n*****************************', '\nThis round of questions is all about the Wednesday session you attended.')
 # Section 1 questions
 section1_question_prompts = [
-   '\n----------SQ1----------\nFirst section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
-   '\n----------SQ2----------\nFirst section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
-   '\n----------SQ3----------\nFirst section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
+   '\n---------- Wednesday Question 1 ----------\nHow did you find the content?\n(a) Easy to follow.\n(b) A little hard to follow.\n(c) I was completely lost...\n\n',
+   '\n---------- Wednesday Question 2 ----------\nWere you able to complete the night\'s task?\n(a) Yes I finished it in class.\n(b) I couldn\'t finish it in class, but I finished it at home.\n(c) No, it\'s another thing I\'m behind on :(\n\n',
+   '\n---------- Wednesday Question 3 ----------\nDid you enjoy the session?\n(a) I loved it!\n(b) It was fine, but I\'ve had better.\n(c) I literally wanted to cry (or did cry).\n\n',
 ]
 section1_questions = [
     Question(section1_question_prompts[0], ' '),
@@ -44,12 +43,12 @@ section1_questions = [
 
 # Here is the second section - title, description and questions
 # Section 2 title and descripion
-section2 = Section('\n\n*****************************\n       Section 2 Title\n*****************************', '\nSection 2 Description')
+section2 = Section('\n\n*****************************\n      About Saturday...\n*****************************', '\nThis round of questions is all about the Saturday class you attended.')
 # Section 2 questions
 section2_question_prompts = [
-   '\n----------SQ1----------\nSecond section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
-   '\n----------SQ2----------\nSecond section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
-   '\n----------SQ3----------\nSecond section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
+   '\n---------- Saturday Question 1 ----------\nHow did you find the demo?\n(a) Very valuable!\n(b) It was fine, but I was a little lost.\n(c) Confusing!\n\n',
+   '\n---------- Saturday Question 2 ----------\nDid you finish all the tasks in class?\n(a) Yes, I got them all done.\n(b) Most, but not all of them.\n(c) I finished very little...\n\n',
+   '\n---------- Saturday Question 3 ----------\nDid you make any progress on this week\'s project?\n(a) Yep, I sure did!\n(b) Not much no.\n(c) I didn\'t make any progress.\n\n',
 ]
 section2_questions = [
     Question(section2_question_prompts[0], ' '),
@@ -59,12 +58,12 @@ section2_questions = [
 
 # Here is the third section - title, description and questions
 # Section 3 title and descripion
-section3 = Section('\n\n*****************************\n       Section 3 Title\n*****************************', '\nSection 3 Description')
+section3 = Section('\n\n*****************************\n    About those mentors...\n*****************************', '\nWe\'d like to hear your thoughts on the mentors.')
 # Section 3 questions
 section3_question_prompts = [
-   '\n----------SQ1----------\nThird section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
-   '\n----------SQ2----------\nThird section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
-   '\n----------SQ3----------\nThird section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
+   '\n---------- Mentors Question 1 ----------\nWere they on their game this week?\n(a) Couldn\'t rate them any higher.\n(b) They\'ve had better weeks.\n(c) Lol, they don\'t have game.\n\n',
+   '\n---------- Mentors Question 2 ----------\nWho was your favourite mentor from this week?\n(a) Hayley\n(b) Marc\n(c) Ben\n\n',
+   '\n---------- Mentors Question 3 ----------\nAre you getting enough help from the mentors on Slack?\n(a) Yes, heaps.\n(b) I ask questions, but they sometimes don\'t answer them.\n(c) I don\'t really ask any questions...\n\n',
 ]
 section3_questions = [
     Question(section3_question_prompts[0], ' '),
