@@ -1,0 +1,1 @@
+To start the survey, type 'python start_survey.py' into the command line.
