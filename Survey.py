@@ -10,6 +10,7 @@ class Survey:
     def start_survey(self):
         pass
 
+# Here are the first three qualifying questions
 question_prompts = [
     '\n----------Q1----------\nSomething about Wednesday\'s class\n(a) Yes\n(b) No\n\n',
     '\n----------Q2----------\nSomething about Saturday\'s class\n(a) Yes\n(b) No\n\n',
@@ -21,7 +22,10 @@ qualifying_questions = [
     Question(question_prompts[2], ' '),
 ]
 
-
+# Here is the first section - title, description and questions
+# Section 1 title and descripion
+section1 = Section('\n\n*****************************\n       Section 1 Title\n*****************************', '\nSection 1 Description')
+# Section 1 questions
 section1_question_prompts = [
    '\n----------SQ1----------\nFirst section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
    '\n----------SQ2----------\nFirst section question\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
@@ -34,30 +38,37 @@ section1_questions = [
 ]
 
 
-print('Welcome to my survey!\nPlease answer honestly.')
+# Welcome message
+print('\nWelcome to my survey!\nPlease answer honestly.')
 
-section1 = Section('\n\n*****************************\n    Section 1 Title\n*****************************', '\n\nSection 1 Description\n\n')
+# section2 = Section('\n\n*****************************\n       Section 2 Title\n*****************************', '\nSection 2 Description')
+# section3 = Section('\n\n*****************************\n       Section 3 Title\n*****************************', '\nSection 3 Description')
+
 def run_section1():
     print(section1.section_title)
     print(section1.description)
     def run_section1_questions(section1_questions):
         for question in section1_questions:
-            answer = input(question.prompt)
-            if answer.lower() in ['a', 'b', 'c']:
-                print('Great, you answered ' + answer)
-            else:
-                print('Nope, not valid')
+            while True:
+                answer = input(question.prompt)
+                if answer.lower() in ['a', 'b', 'c']:
+                    print('***** Great, you answered ' + answer)
+                    break
+                else:
+                    print('***** Nope, not valid. Try that again. I\'m only accepting a, b or c.')
     run_section1_questions(section1_questions)
 
+
+
+#this is the start of the survey qualifying questions, but it isn't executed until the bottom
 def run_survey(qualifying_questions):
-    """ process the survey """
     sections_to_show = []
     for question in qualifying_questions:
         while True:
             answer = input(question.prompt)
             if answer.lower() in ['a', 'b', 'yes', 'no']:
                 # if the answer is valid then process it
-                print('=======================\nAwesome, you answered ' + answer + '\n=======================')
+                print('***** Awesome, you answered ' + answer)
                 if answer.lower() in ['a', 'yes']:
                     # if the answer is yes, then save this section for later
                     sections_to_show.append('a')
@@ -65,7 +76,7 @@ def run_survey(qualifying_questions):
                     sections_to_show.append('b')
                 break
             else:
-                print('===========================================================\nHmmmmmmm, that\'s not quite right...Please try again\n===========================================================')
+                print('***** Hmmmmmmm, that\'s not quite right...Please try again.')
     if sections_to_show[0] == 'a':
         run_section1()
 
@@ -77,3 +88,5 @@ def run_survey(qualifying_questions):
 # This starts the survey
 run_survey(qualifying_questions)
 
+# This is the end message
+print('\nThanks so much for taking the survey. Have a great day!\n\n')
