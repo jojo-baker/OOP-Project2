@@ -16,7 +16,7 @@ question_prompts = [
     '\n----------Q3----------\nThis is question number 3\n(a) answer 1\n(b) answer 2\n(c) answer 3\n\n',
 ]
 
-questions = [
+qualifying_questions = [
     Question(question_prompts[0], ' '),
     Question(question_prompts[1], ' '),
     Question(question_prompts[2], ' '),
@@ -25,24 +25,20 @@ questions = [
 print('Welcome to my survey!\nPlease answer honestly.')
 
 
-def run_survey(questions):
-    for question in questions:
-        answer = input(question.prompt)
-        # if answer == 'a' or answer == 'b' or answer == 'c':
-        #     print('You answered ' + answer)
-        # else:
-        #     print('Hmmmmmmm...Please answer either a, b, or c')
-        # trying the while loop
+def run_survey(qualifying_questions):
+    for question in qualifying_questions:
+        while True:
+            answer = input(question.prompt)
+            if answer in ['a', 'b', 'c']:
+                print('===== Awesome, you answered ' + answer + ' =====')
+                break
+            else:
+                print('===== Hmmmmmmm, that\'s not quite right...Please answer either a, b, or c =====')
 
 
+run_survey(qualifying_questions)
 
-run_survey(questions)
 
-# print('Welcome to this super special survey!\nPlease take the time to answer honestly.')
-# print()
-# print('------------ Question 1 ------------')
-# print(q_text[0])
-# answer1 = input()
 
 # ask 3 qualifying questions with multiple choice answers
 # section 1
