@@ -1,6 +1,7 @@
 class Section:
 
-    def __init__(self, description, qualifying_question, first_question):
-        self. description = "This is the description"
-        self.qualifying_question = qualifying_question
-        self.first_question = first_question
+    def __init__(self, section_title, description):
+        self.section_title = section_title
+        self.description = description
+        # self.section_prompt = section_prompt
+        # self.section_answer = section_answer
